@@ -1,14 +1,14 @@
 # Grow With Me Backend
 
-# Summary
+## Summary
 
 This is the backend for the Grow With Me web app. It is a RESTful API that allows users to create, read, update, and delete users (consultants and farmers), crops, etc.
 
-# Features
+## Features
 
 - CRUD
 
-# Technologies
+## Technologies
 
 - Java 22
 - Spring Boot
@@ -19,7 +19,7 @@ This is the backend for the Grow With Me web app. It is a RESTful API that allow
 - PostgreSQL
 - Dev Tools
 
-# Authors
+## Authors
 
 - Favio Landeo
 - Jeremy Paucar
