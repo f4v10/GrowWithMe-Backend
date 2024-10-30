@@ -4,6 +4,7 @@ import com.cupoftech.growwithme.profiles.domain.model.valueobjects.EmailAddress;
 import com.cupoftech.growwithme.profiles.domain.model.valueobjects.PersonName;
 import com.cupoftech.growwithme.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 

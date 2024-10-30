@@ -5,10 +5,12 @@ import com.cupoftech.growwithme.profiles.domain.model.queries.farmer.GetAllFarme
 import com.cupoftech.growwithme.profiles.domain.model.queries.farmer.GetFarmerUserByIdQuery;
 import com.cupoftech.growwithme.profiles.domain.services.farmer.FarmerUserQueryService;
 import com.cupoftech.growwithme.profiles.infrastructure.persistence.jpa.repositories.FarmerUserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class FarmerUserQueryServiceImpl implements FarmerUserQueryService {
     private final FarmerUserRepository repository;
 

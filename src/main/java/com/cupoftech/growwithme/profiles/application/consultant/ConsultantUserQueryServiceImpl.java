@@ -5,10 +5,12 @@ import com.cupoftech.growwithme.profiles.domain.model.queries.consultant.GetAllC
 import com.cupoftech.growwithme.profiles.domain.model.queries.consultant.GetConsultantUserByIdQuery;
 import com.cupoftech.growwithme.profiles.domain.services.consultant.ConsultantUserQueryService;
 import com.cupoftech.growwithme.profiles.infrastructure.persistence.jpa.repositories.ConsultantUserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ConsultantUserQueryServiceImpl implements ConsultantUserQueryService {
     private final ConsultantUserRepository repository;
 

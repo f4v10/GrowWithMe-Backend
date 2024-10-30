@@ -9,9 +9,8 @@ public class CreateConsultantUserCommandFromResourceAssembler {
                 resource.firstName(),
                 resource.lastName(),
                 resource.email(),
-                resource.password(),
-                resource.dni(),
-                resource.phone()
+                resource.phone(),
+                resource.dni()
         );
     }
 }

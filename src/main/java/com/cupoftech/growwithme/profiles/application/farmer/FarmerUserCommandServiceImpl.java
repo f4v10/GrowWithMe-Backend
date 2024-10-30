@@ -5,9 +5,11 @@ import com.cupoftech.growwithme.profiles.domain.model.commands.farmer.CreateFarm
 import com.cupoftech.growwithme.profiles.domain.model.commands.farmer.DeleteFarmerUserCommand;
 import com.cupoftech.growwithme.profiles.domain.services.farmer.FarmerUserCommandService;
 import com.cupoftech.growwithme.profiles.infrastructure.persistence.jpa.repositories.FarmerUserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class FarmerUserCommandServiceImpl implements FarmerUserCommandService {
     private final FarmerUserRepository repository;
 

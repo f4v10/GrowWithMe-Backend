@@ -4,9 +4,8 @@ public record CreateFarmerUserResource(
         String firstName,
         String lastName,
         String email,
-        String password,
+        String phone,
         String documentType,
-        String valueDocumentType,
-        String phone
+        String valueDocumentType
 ) {
 }

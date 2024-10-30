@@ -9,10 +9,9 @@ public class CreateFarmerUserCommandFromResourceAssembler {
                 resource.firstName(),
                 resource.lastName(),
                 resource.email(),
-                resource.password(),
+                resource.phone(),
                 resource.documentType(),
-                resource.valueDocumentType(),
-                resource.phone()
+                resource.valueDocumentType()
         );
     }
 }

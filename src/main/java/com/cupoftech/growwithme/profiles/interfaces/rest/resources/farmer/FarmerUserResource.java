@@ -4,9 +4,8 @@ public record FarmerUserResource(
         Long id,
         String fullName,
         String email,
-        String password,
+        String phone,
         String documentType,
-        String valueDocumentType,
-        String phone
+        String valueDocumentType
 ) {
 }
