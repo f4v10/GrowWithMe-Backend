@@ -1,4 +1,4 @@
-package com.cupoftech.growwithme.iam.domain.model.valueobjects;
+package com.cupoftech.growwithme.crops.domain.model.valueobjects;
 
 import jakarta.validation.constraints.Pattern;
 

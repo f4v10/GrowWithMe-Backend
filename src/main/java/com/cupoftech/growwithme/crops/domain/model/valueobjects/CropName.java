@@ -1,13 +1,9 @@
-package com.cupoftech.growwithme.iam.domain.model.valueobjects;
+package com.cupoftech.growwithme.crops.domain.model.valueobjects;
 
-public record CropName(String Name) {
+public record CropName(String name) {
     public CropName {
-        if (Name == null || Name.isBlank()) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name must not be null or blank");
         }
-    }
-
-    public String getFullName() {
-        return String.format("%s %s", Name);
     }
 }
