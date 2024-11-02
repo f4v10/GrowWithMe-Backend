@@ -1,5 +1,6 @@
 package com.cupoftech.growwithme.profiles.interfaces.rest;
 
+import com.cupoftech.growwithme.profiles.domain.model.queries.farmer.GetAllFarmerUsersQuery;
 import com.cupoftech.growwithme.profiles.domain.model.queries.farmer.GetFarmerUserByIdQuery;
 import com.cupoftech.growwithme.profiles.domain.services.farmer.FarmerUserCommandService;
 import com.cupoftech.growwithme.profiles.domain.services.farmer.FarmerUserQueryService;
@@ -14,9 +15,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "/api/v1/farmer-users", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/farmer-user", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "FarmerUsers", description = "Farmer Users Management Endpoint")
 public class FarmerUsersController {
     private final FarmerUserCommandService farmerUserCommandService;
@@ -40,4 +43,14 @@ public class FarmerUsersController {
         return ResponseEntity.ok(farmerUserResource);
     }
 
+    @GetMapping()
+    public ResponseEntity<List<FarmerUserResource>> getAllFarmerUsers() {
+        var getAllFarmerUsersQuery = new GetAllFarmerUsersQuery();
+        var farmerUsers = farmerUserQueryService.handle(getAllFarmerUsersQuery);
+        if (farmerUsers.isEmpty()) { return ResponseEntity.notFound().build(); }
+        var farmerUserResources = farmerUsers.stream()
+                .map(FarmerUserResourceFromEntityAssembler::toResourceFromEntity)
+                .toList();
+        return ResponseEntity.ok(farmerUserResources);
+    }
 }
