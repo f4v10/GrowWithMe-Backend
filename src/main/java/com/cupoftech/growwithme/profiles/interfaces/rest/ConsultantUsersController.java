@@ -1,5 +1,6 @@
 package com.cupoftech.growwithme.profiles.interfaces.rest;
 
+import com.cupoftech.growwithme.profiles.domain.model.queries.consultant.GetAllConsultantUsersQuery;
 import com.cupoftech.growwithme.profiles.domain.model.queries.consultant.GetConsultantUserByIdQuery;
 import com.cupoftech.growwithme.profiles.domain.services.consultant.ConsultantUserCommandService;
 import com.cupoftech.growwithme.profiles.domain.services.consultant.ConsultantUserQueryService;
@@ -14,9 +15,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
-@RequestMapping(value = "/api/v1/consultant-users", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/consultant-user", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "ConsultantUsers", description = "Consultant Users Management Endpoint")
 public class ConsultantUsersController {
     private final ConsultantUserCommandService consultantUserCommandService;
@@ -38,5 +41,16 @@ public class ConsultantUsersController {
         if (consultantUser.isEmpty()) { return ResponseEntity.notFound().build(); }
         var consultantUserResource = ConsultantUserResourceFromEntityAssembler.toResourceFromEntity(consultantUser.get());
         return ResponseEntity.ok(consultantUserResource);
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<ConsultantUserResource>> getAllConsultantUsers() {
+        var getAllConsultantUsersQuery = new GetAllConsultantUsersQuery();
+        var consultantUsers = consultantUserQueryService.handle(getAllConsultantUsersQuery);
+        if (consultantUsers.isEmpty()) { return ResponseEntity.notFound().build(); }
+        var consultantUserResources = consultantUsers.stream()
+                .map(ConsultantUserResourceFromEntityAssembler::toResourceFromEntity)
+                .toList();
+        return ResponseEntity.ok(consultantUserResources);
     }
 }
