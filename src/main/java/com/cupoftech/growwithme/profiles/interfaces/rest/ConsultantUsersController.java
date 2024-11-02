@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(value = "/api/v1/consultant-user", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/consultant-users", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "ConsultantUsers", description = "Consultant Users Management Endpoint")
 public class ConsultantUsersController {
     private final ConsultantUserCommandService consultantUserCommandService;
