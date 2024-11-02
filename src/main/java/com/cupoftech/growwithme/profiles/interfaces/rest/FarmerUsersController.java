@@ -19,7 +19,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "/api/v1/farmer-user", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/farmers", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "FarmerUsers", description = "Farmer Users Management Endpoint")
 public class FarmerUsersController {
     private final FarmerUserCommandService farmerUserCommandService;
