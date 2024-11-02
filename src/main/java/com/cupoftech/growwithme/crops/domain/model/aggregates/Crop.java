@@ -35,4 +35,12 @@ public class Crop extends AuditableAbstractAggregateRoot<Crop> {
         this.status = command.status();
         this.cost = command.cost();
     }
+
+    public String getName() {
+        return name.name();
+    }
+
+    public String getCode() {
+        return code.code();
+    }
 }
