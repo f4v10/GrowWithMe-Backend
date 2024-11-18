@@ -74,6 +74,30 @@
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.6.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.3</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.3</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -88,36 +112,6 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>com.microsoft.azure</groupId>
-                <artifactId>azure-webapp-maven-plugin</artifactId>
-                <version>2.13.0</version>
-                <configuration>
-                    <schemaVersion>v2</schemaVersion>
-                    <subscriptionId>83a64570-5d1b-4340-9b2a-e75a7f7863d7</subscriptionId>
-                    <resourceGroup>cupoftech</resourceGroup>
-                    <appName>grow-with-me</appName>
-                    <pricingTier>F1</pricingTier>
-                    <region>brazil south</region>
-                    <runtime>
-                        <os>Windows</os>
-                        <webContainer>Java SE</webContainer>
-                        <javaVersion>Java 17</javaVersion>
-                    </runtime>
-                    <deployment>
-                        <resources>
-                            <resource>
-                                <type>jar</type>
-                                <directory>${project.basedir}/target</directory>
-                                <includes>
-                                    <include>*.jar</include>
-                                </includes>
-                            </resource>
-                        </resources>
-                    </deployment>
                 </configuration>
             </plugin>
         </plugins>
