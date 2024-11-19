@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
 @AllArgsConstructor
+@RestController
 @RequestMapping(value = "/api/v1/consultants", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "Consultants", description = "Consultant Users Management Endpoint")
 public class ConsultantUsersController {
