@@ -3,7 +3,6 @@ package com.cupoftech.growwithme.iam.domain.model.aggregates;
 import com.cupoftech.growwithme.iam.domain.model.entities.Role;
 import com.cupoftech.growwithme.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;

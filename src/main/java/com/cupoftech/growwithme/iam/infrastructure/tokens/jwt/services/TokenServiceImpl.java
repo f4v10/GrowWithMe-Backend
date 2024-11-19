@@ -125,5 +125,4 @@ public class TokenServiceImpl implements BearerTokenService {
     private String getAuthorizationParameterFrom(HttpServletRequest request) {
         return request.getHeader(AUTHORIZATION_PARAMETER_NAME);
     }
-
 }
