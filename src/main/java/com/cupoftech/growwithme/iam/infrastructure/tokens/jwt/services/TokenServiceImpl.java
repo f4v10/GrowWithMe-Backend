@@ -54,6 +54,7 @@ public class TokenServiceImpl implements BearerTokenService {
     @Override
     public boolean validateToken(String token) {
         try {
+
             Jwts.parser()
                     .verifyWith(getSigningKey())
                     .build()
