@@ -1,4 +1,4 @@
 package com.cupoftech.growwithme.iam.domain.model.queries;
 
-public record GetUserByUsernameQuery(String username) {
+public record GetUserByEmailQuery(String email) {
 }

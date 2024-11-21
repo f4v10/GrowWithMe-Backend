@@ -7,6 +7,6 @@ import com.cupoftech.growwithme.iam.interfaces.rest.resources.UserResource;
 public class UserResourceFromEntityAssembler {
     public static UserResource toResourceFromEntity(User entity) {
         var roles = entity.getRoles().stream().map(Role::getStringName).toList();
-        return new UserResource(entity.getId(), entity.getUsername(), roles);
+        return new UserResource(entity.getId(), entity.getEmail(), roles);
     }
 }
