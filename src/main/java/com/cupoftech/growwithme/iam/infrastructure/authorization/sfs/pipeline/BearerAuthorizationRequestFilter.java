@@ -1,6 +1,6 @@
 package com.cupoftech.growwithme.iam.infrastructure.authorization.sfs.pipeline;
 
-import com.cupoftech.growwithme.iam.infrastructure.authorization.sfs.model.UsernamePasswordAuthenticationTokenBuilder;
+import com.cupoftech.growwithme.iam.infrastructure.authorization.sfs.model.EmailPasswordAuthenticationTokenBuilder;
 import com.cupoftech.growwithme.iam.infrastructure.tokens.jwt.BearerTokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -37,7 +37,7 @@ public class BearerAuthorizationRequestFilter extends OncePerRequestFilter {
                 String username = tokenService.getUsernameFromToken(token);
                 var userDetails = userDetailsService.loadUserByUsername(username);
                 SecurityContextHolder.getContext()
-                        .setAuthentication(UsernamePasswordAuthenticationTokenBuilder
+                        .setAuthentication(EmailPasswordAuthenticationTokenBuilder
                                 .build(userDetails, request));
             } else {
                 LOGGER.warn("Token is not valid or not present in the request.");
